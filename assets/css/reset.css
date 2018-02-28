@@ -1,0 +1,96 @@
+
+css reset
+CSS Resets
+CSS Tutorials
+Eric Meyer’s “Reset CSS” 2.0
+by Joss  –  follow on Twitter here
+One of the pioneers of the CSS Reset method, Eric Meyer, created a Reset stylesheet that is still in use on millions of websites today. Most people use it in its unedited form, despite Meyer’s recommendation against this:
+
+The reset styles given here are intentionally very generic. There isn’t any default color or background set for the body element, for example. I don’t particularly recommend that you just use this in its unaltered state in your own projects. It should be tweaked, edited, extended, and otherwise tuned to match your specific reset baseline. Fill in your preferred colors for the page, links, and so on.
+
+Here’s the code:
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+2018’s most popular CSS Reset scripts, all in one place
+ABOUT CSSRESET.COM
+CSSReset.com is a free resource for web designers and developers. On the homepage, you'll find the most popular CSS Reset scripts to copy/paste, with documentation for each.
+
+Developing sites or apps? You'll also enjoy MotionCAPTCHA, money.js and Open Exchange Rates.
+
+LATEST CSS TUTORIALS
+Stylish Focus Effect on Input Text Using CSS
+Use CSS to Add Various Shadows to Text and Elements
+Make Beautiful Hyperlinks Using CSS
+15 Awesome Flexbox CSS Frameworks
+Create a simple yet stylish tooltip using CSS
+RESET CSS SCRIPTS
+Eric Meyer’s “Reset CSS” 2.0
+HTML5 Doctor CSS Reset
+Tripoli CSS Reset
+‘undohtml.css’ – Tantek Celik
+Universal Selector ‘*’ Reset
+Vanilla CSS Un-Reset
+Yahoo! (YUI 3) Reset CSS
+POPULAR TOPICS
+css(23)
+css3(16)
+basic(14)
+intermediate(13)
+advanced(12)
+layout(10)
+:hover(10)
+position(10)
+color(9)
+typography(7)
+FACEBOOK COMMUNITY
+All words, images and code copyright © 2010 - 2018 cssreset.com. All rights reserved.
+About • Contact • Terms & Conditions • Privacy
+
+RSS / Email / Twitter:  RSSEmailTwitter
