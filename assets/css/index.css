@@ -1,0 +1,17 @@
+body {
+    background-image: url(../../assets/images/HPwallpaper2.jpg);
+    background-image: 100%;
+}
+
+.jumbotron {
+    font-family: 'Cabin Sketch', cursive;
+}
+h3 {
+    font-size: 25px;
+}
+
+
+h2 {
+    color: #af12d6;
+    font-family: 'Syncopate', sans-serif;
+}

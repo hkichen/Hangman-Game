@@ -5,52 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Syncopate" rel="stylesheet">
     <script src="assets/javascript/game.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Hangman <br> Magic Spells</h1>
-            <p>Guess the spells from Harry Potter</p>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Word to Guess</h3>
-            </div>
-            <div class="panel-body">
-                <h2 id="wordToGuess">_ _ _ _ _</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1>Hangman <br> Magic Spells</h1>
+                    <p>Guess the spells from Harry Potter</p>
+                </div>
             </div>
         </div>
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Wrong Guesses: <span id="wrongGuesses">h</span>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Guesses left: <span id="numGuesses">h</span>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Wins: <span id="winCount">h</span>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Losses: <span id="lossCount">H</span>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Word to Guess</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h2 id="wordToGuess">_ _ _ _ _</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Wrong Guesses: <span id="wrongGuesses"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Guesses left: <span id="numGuesses"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Wins: <span id="winCount"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            Losses: <span id="lossCount"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
+    
+    
     <script src="assets/javascript/game.js"></script>
-   
+    
 </body>
 </html>
