@@ -41,11 +41,6 @@ function startGame () {
     document.getElementById("numGuesses").innerHTML = guessesLeft;
     document.getElementById("winCount").innerHTML = winCount; 
     document.getElementById("lossCount").innerHTML = lossCount;
-    //delete when done
-    console.log(selectedWord);
-    console.log(lettersInWord);
-    console.log(numBlanks);
-    console.log(blanksAndSuccesses);
 }
 
 function checkLetters(letter) {
@@ -70,16 +65,14 @@ function checkLetters(letter) {
 }
 
 function roundComplete () {
-    console.log("win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left: " + guessesLeft);
-
     document.getElementById("numGuesses").innerHTML = guessesLeft;
     document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
     document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
 
     if(lettersInWord.toString() == blanksAndSuccesses.toString()) {
         winCount++;
+        document.getElementById("magicSound").play();
         alert("Congrats, you won!");
-
         document.getElementById("winCount").innerHTML = winCount;
 
         startGame ();
