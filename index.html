@@ -11,9 +11,46 @@
     <script src="assets/javascript/game.js"></script>
 </head>
 <body>
-    <div id="game">
-        <h1>Harry Potter Spells</h1>
-        
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hangman <br> Magic Spells</h1>
+            <p>Guess the spells from Harry Potter</p>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Word to Guess</h3>
+            </div>
+            <div class="panel-body">
+                <h2 id="wordToGuess">_ _ _ _ _</h2>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Wrong Guesses: <span id="wrongGuesses">h</span>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Guesses left: <span id="numGuesses">h</span>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Wins: <span id="winCount">h</span>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Losses: <span id="lossCount">H</span>
+            </div>
+        </div>
     </div>
+    <script src="assets/javascript/game.js"></script>
+   
 </body>
 </html>

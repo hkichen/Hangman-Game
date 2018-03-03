@@ -1,33 +1,94 @@
-var spells = ["alohamora", "aquamenti", "confringo", "confundo", "crucio", "engorgio", "episkey", "expelliarmus", "finite", "immobulus", "imperio", "incendio", "legilimens", "lumos", "nox", "obliviate", "protego", "reducto", "reparo", "silencio"];
+//variables
+var wordOptions = ["alohamora", "aquamenti", "confringo", "confundo", "crucio", "engorgio", "episkey", "expelliarmus", "finite", "immobulus", "imperio", "incendio", "legilimens", "lumos", "nox", "obliviate", "protego", "reducto", "reparo", "silencio"];
+var selectedWord = "";
+var lettersInWord = [];
+var numBlanks = 0;
+var blanksAndSuccesses = [];
+var wrongLetters = [];
 
-var lives = 10;
-var lettersGuessed = ["x", "b", "e", "a"];
+var winCount = 0;
+var lossCount = 0;
+var guessesLeft = 10;
 
-function contains(arr, ele) {
-    // return true if arr contains ele
-    var arrHasElement = false;
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] == ele) {
-            arrHasElement = true;
-        }
+startGame();
+
+//registering key press
+
+document.onkeyup = function(event) {
+    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+    checkLetters(letterGuessed);
+    roundComplete();
+
+    console.log(letterGuessed);
+}
+//Begin the Game with: select word, appear as blanks, 0 wins/losses, and 10 guesses
+function startGame () {
+    selectedWord = wordOptions[Math.floor(Math.random () * wordOptions.length)];
+    
+    lettersInWord = selectedWord.split("");
+    numBlanks = lettersInWord.length;
+    
+    guessesLeft = 10;
+    wrongLetters = [];
+    blanksAndSuccesses = [];
+
+    for (var i = 0; i < numBlanks; i++) {
+        blanksAndSuccesses.push("_");
     }
-    return arrHasElement;
+    
+    //write html updates
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+    document.getElementById("numGuesses").innerHTML = guessesLeft;
+    document.getElementById("winCount").innerHTML = winCount; 
+    document.getElementById("lossCount").innerHTML = lossCount;
+    //delete when done
+    console.log(selectedWord);
+    console.log(lettersInWord);
+    console.log(numBlanks);
+    console.log(blanksAndSuccesses);
 }
 
-function userGuessed(userGuess) {
-    var computerSpell = spells[Math.floor(Math.random() * spells.length)];
-    console.log(computerSpell)
-    var word = ""
-    for (var i = 0; i < computerSpell.length; i++) {
-        if (contains(lettersGuessed, computerSpell[i])) {
-            word = word + computerSpell[i];
-        } else {
-            word = word + "-";
+function checkLetters(letter) {
+    var isLetterInWord = false;
+    for (var i = 0; i < numBlanks; i++) {
+        if(selectedWord[i] == letter) {
+            isLetterInWord = true;
         }
     }
-    return word;
+    if(isLetterInWord) {
+        for (var i = 0; i < numBlanks; i++) {
+            if(selectedWord[i] == letter) {
+                blanksAndSuccesses[i] = letter;
+            }
+        }
+    }
+    else {
+        wrongLetters.push(letter);
+        guessesLeft--;
+    }
+    console.log(blanksAndSuccesses);
 }
-console.log(userGuessed("x"))
 
+function roundComplete () {
+    console.log("win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left: " + guessesLeft);
 
+    document.getElementById("numGuesses").innerHTML = guessesLeft;
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+    document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
 
+    if(lettersInWord.toString() == blanksAndSuccesses.toString()) {
+        winCount++;
+        alert("Congrats, you won!");
+
+        document.getElementById("winCount").innerHTML = winCount;
+
+        startGame ();
+    }
+
+    else if (guessesLeft == 0) {
+        lossCount++;
+        alert("Better luck next time!");
+        document.getElementById("lossCount").innerHTML = lossCount;
+        startGame ();
+    }
+}
